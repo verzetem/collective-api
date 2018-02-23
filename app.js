@@ -10,6 +10,8 @@ const shoppingCart = require('./app/shopping-cart/routes')
 const messages = require('./app/messages/routes')
 const meetings = require('./app/meetings')
 const users = require('./app/users/routes')
+const posts = require('./app/posts/routes')
+const comments = require('./app/comments/routes')
 
 const app = express()
 
@@ -30,6 +32,8 @@ app.use('/api', messages)
 app.use('/api', meetings)
 app.use('/api', shoppingCart)
 app.use('/api', users)
+app.use('/api', posts)
+app.use('/api', comments)
 app.get('/', (req, res, next) => res.redirect('/api'))
 
 app.use(function(req, res, next) {

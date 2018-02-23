@@ -26,6 +26,7 @@ router.post('/users', (req, res) => {
 })
 
 router.post('/login', (req, res) => {
+  console.log('body', req.body)
   const user = db.users.findBy('email', req.body.email)
   if(user) {
     res.json(user)
