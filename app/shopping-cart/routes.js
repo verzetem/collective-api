@@ -27,6 +27,11 @@ router.get('/items', (req, res, next) => {
   res.json(items)
 })
 
+router.post('/items', (req, res, next) => {
+  const item = db.items.insert({ quantity: req.body.quantity, product_id: req.body.product.id })
+  res.json(item)
+})
+
 router.post('/products/:productId/items', (req, res, next) => {
   const productId = parseInt(req.params.productId, 10)
   const product = db.products.find(req.params.productId)
