@@ -17,7 +17,7 @@ npm install
 node server.js
 ```
 
-Then you can see the API running on http://localhost:8082
+Then you can see the API running on [http://localhost:8082](http://localhost:8082)
 
 ## API Endpoints
 
