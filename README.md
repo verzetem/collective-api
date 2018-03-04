@@ -21,9 +21,9 @@ Then you can see the API running on http://localhost:8082
 
 ## API Endpoints
 
-`http://localhost:8082/users`
-`http://localhost:8082/products`
-`http://localhost:8082/items`
-`http://localhost:8082/people`
-`http://localhost:8082/posts`
-`http://localhost:8082/comments`
+`http://localhost:8082/api/users`
+`http://localhost:8082/api/products`
+`http://localhost:8082/api/items`
+`http://localhost:8082/api/people`
+`http://localhost:8082/api/posts`
+`http://localhost:8082/api/comments`
