@@ -16,8 +16,10 @@ router.post('/posts', (req, res) => {
   console.log('req.body', req.body)
   const newpost = db.posts.insert({
     "author": req.body.author,
-    "content": req.body.body,
+    "content": req.body.content,
     "title": req.body.title,
+    "createdAt": new Date(),
+    "votes": 0
   })
   console.log('newpost', newpost)
   res.json(newpost)
