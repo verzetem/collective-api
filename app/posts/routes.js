@@ -25,6 +25,18 @@ router.post('/posts', (req, res) => {
   res.json(newpost)
 })
 
+router.get('/posts/votes/increase/:id', (req, res) => {
+  const post = db.posts.find(req.params.id)
+  post.votes++
+  res.json(post)
+})
+
+router.get('/posts/votes/decrease/:id', (req, res) => {
+  const post = db.posts.find(req.params.id)
+  post.votes--
+  res.json(post)
+})
+
 router.delete('/posts/:id', (req, res) => {
   const post = db.posts.find(req.params.id)
   if (post) {
