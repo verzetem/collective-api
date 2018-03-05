@@ -13,11 +13,13 @@ router.get('/posts/:id', (req, res) => {
 })
 
 router.post('/posts', (req, res) => {
+  console.log('req.body', req.body)
   const newpost = db.posts.insert({
     "author": req.body.author,
-    "content": req.body.content,
+    "content": req.body.body,
     "title": req.body.title,
   })
+  console.log('newpost', newpost)
   res.json(newpost)
 })
 
