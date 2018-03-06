@@ -13,12 +13,11 @@ router.get('/comments/:id', (req, res) => {
 })
 
 router.post('/comments', (req, res) => {
-  const newcomment = db.comments.insert({
-    "author": req.body.author,
+  const newComment = db.comments.insert({
     "content": req.body.content,
     "post_id": req.body.post_id,
   })
-  res.json(newcomment)
+  res.json(newComment)
 })
 
 router.delete('/comments/:id', (req, res) => {
