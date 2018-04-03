@@ -27,7 +27,8 @@ router.post('/users', (req, res) => {
 
 router.post('/login', (req, res) => {
   const user = db.users.findBy('email', req.body.email)
-  if(user && req.body.password === 'hello') {
+  console.log('user', user);
+  if(user && req.body.password === user.password) {
     res.json(user)
   } else {
     res.sendStatus(400)
