@@ -24,16 +24,17 @@ router.post('/messages', (req, res, next) => {
 })
 
 router.patch('/messages', (req, res, next) => {
+  console.log('req.body', req.body)
   db.messages.findAll(req.body.messageIds).forEach(message => {
     commands[req.body.command](message, req.body)
   })
   res.status(200)
-  res.end()
+  res.send(db.messages.findAll())
 })
 
 const commands = {
   star (message, cmd) {
-    message.starred = cmd.star
+    message.starred = !message.starred
   },
 
   delete (message, cmd) {
