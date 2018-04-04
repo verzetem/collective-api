@@ -20,7 +20,7 @@ router.post('/users', (req, res) => {
     "company": req.body.company,
     "address": req.body.address,
     "photo_url": "http://placehold.it/100x100",
-    "password": "hello"
+    "password": req.body.password
   })
   res.json(newUser)
 })
