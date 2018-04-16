@@ -26,13 +26,16 @@ router.post('/books', (req, res) => {
   res.json(newBook)
 })
 
-router.patch('/books/:id', (req, res) => {
-   const book = db.books.findByIdAndUpdate(req.params.id, { title: "hello world"})
-   res.json(db.books.findAll())
-})
+// router.patch('/books/:id', (req, res) => {
+//    const book = db.books.findByIdAndUpdate(req.params.id, { title: "hello world"})
+//    res.json(db.books.findAll())
+// })
 
 router.delete('/books/:id', (req, res) => {
-   
+  let selectedBook = db.books.find(req.params.id)
+  db.books.delete(req.params.id)
+  res.json(selectedBook)
+
 })
 
 
