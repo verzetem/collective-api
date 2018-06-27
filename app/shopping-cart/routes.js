@@ -30,7 +30,7 @@ router.get('/items', (req, res, next) => {
 router.post('/items', (req, res, next) => {
   const item = db.items.insert({ 
     quantity: Number(req.body.quantity), 
-    product_id: Number(req.body.productId) 
+    product_id: Number(req.body.product_id) 
   })  
   res.json(item)
 })
