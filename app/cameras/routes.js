@@ -19,9 +19,21 @@ router.post('/cameras', (req, res) => {
     "picture": req.body.picture,
     "createdAt": new Date(),
     "rating": 0,
-    "inCart": req.false.img_url
+    "inCart": req.body.inCart
   })
   res.json(newcamera)
+})
+
+router.patch('/cameras/:id/add', (req, res) => {
+  const camera = db.cameras.find(req.params.id)
+  camera.inCart = true
+  res.send(camera)
+})
+
+router.patch('/cameras/:id/remove', (req, res) => {
+  const camera = db.cameras.find(req.params.id)
+  camera.inCart = false
+  res.send(updatedCamera)
 })
 
 router.delete('/cameras/:id', (req, res) => {
