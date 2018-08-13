@@ -26,6 +26,18 @@ router.post('/books', (req, res) => {
   res.json(newBook)
 })
 
+router.patch('/books/cart/add/:id', function(req, res) {
+  const book = db.books.find(req.params.id)
+  book.inCart = true
+  res.json(book)
+})
+
+router.patch('/books/cart/remove/:id', function(req, res) {
+  const book = db.books.find(req.params.id)
+  book.inCart = false
+  res.json(book)
+})
+
 // router.patch('/books/:id', (req, res) => {
 //    const book = db.books.findByIdAndUpdate(req.params.id, { title: "hello world"})
 //    res.json(db.books.findAll())

@@ -33,7 +33,7 @@ router.patch('/cameras/:id/add', (req, res) => {
 router.patch('/cameras/:id/remove', (req, res) => {
   const camera = db.cameras.find(req.params.id)
   camera.inCart = false
-  res.send(updatedCamera)
+  res.send(camera)
 })
 
 router.delete('/cameras/:id', (req, res) => {
