@@ -21,7 +21,8 @@ router.post('/books', (req, res) => {
     "publisher": req.body.publisher,
     "pages": req.body.pages,
     "description": req.body.description,
-    "website": req.body.website
+    "website": req.body.website,
+    "inCart": false
   })
   res.json(newBook)
 })
