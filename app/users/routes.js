@@ -34,6 +34,14 @@ router.post('/login', (req, res) => {
   }
 })
 
+router.patch('/users/edit/:id', (req, res) => {
+  let user = db.users.findBy('id', req.params.id)
+
+  user = req.body
+
+  res.send(user)
+})
+
 router.delete('/users/:id', (req, res) => {
   const user = db.users.find(req.params.id)
   if (user) {
